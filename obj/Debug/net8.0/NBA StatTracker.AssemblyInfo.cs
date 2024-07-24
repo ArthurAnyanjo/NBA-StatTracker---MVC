@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NBA StatTracker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc8df81e1b12098a7961be63f2899e67696f622c")]
 [assembly: System.Reflection.AssemblyProductAttribute("NBA StatTracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NBA StatTracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
