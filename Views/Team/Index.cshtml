@@ -1,0 +1,35 @@
+@model NBA_StatTracker.ViewModels.HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Teams Page";
+}
+
+<div class="text-center">
+
+    <h2 class="display-4">NBA Stat Track</h2>
+
+    <h2>Teams</h2>
+
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Abbreviation</th>
+            <th>Conference</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var team in Model.Teams)
+        {
+            <tr>
+                <td>@team.Name</td>
+                <td>@team.City</td>
+                <td>@team.Abbreviation</td>
+                <td>@team.Conference</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@model NBA_StatTracker.ViewModels.HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@Html.ValidationSummary()
+
+
+
+<div class="text-center">
+
+    <h1 class="display-4">Welcome to NBA Stat Track</h1>
+
+    <p style="font-size: 18px;">An Extensive look into NBA stats for the Latest Season!</p>
+
+    <div class="d-flex justify-content-center flex-column align-items-center gap-4 mt-2">
+
+        <div class="d-flex flex-row align-items-center gap-3">
+            <span style="font-size: 26px;" class="fw-bold">Step 1</span>
+            <a asp-controller="Home" asp-action="FetchTeamData" class="btn btn-primary">Fetch Team Data</a>
+        </div>
+
+        <div class="d-flex flex-row align-items-center gap-3">
+            <span style="font-size: 26px;" class="fw-bold">Step 2</span>
+            <a asp-controller="Home" asp-action="FetchPlayerData" class="btn bg-danger text-white">Fetch Player Data</a>
+        </div>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <p class="alert alert-success mt-4" id="successMessage">@TempData["Success"]</p>
+    }
+
+
+
+</div>

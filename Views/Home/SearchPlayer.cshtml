@@ -1,0 +1,67 @@
+@model NBA_StatTracker.Models.SearchViewModel
+
+@{
+
+    ViewData["Title"] = "Search Results";
+}
+<div class="text-center">
+    <h3>Players</h3>
+    <p>Use the search form below to find players</p>
+
+</div>
+
+<form asp-action="SearchPlayer" method="post">
+
+
+    <div class="form-group d-flex gap-2">
+        <input class="form-control" type="text" id="query" name="Query" placeholder="Search for a player by last name"
+            value="@Model.Query" />
+        <input type="submit" value="Search">
+    </div>
+
+</form>
+
+
+
+<div class="text-center">
+
+    @if (Model.Players != null && Model.Players.Count > 0)
+    {
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Full Name </th>
+                    <th>Team</th>
+                    <th>Position</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>Jersey Number</th>
+                    <th>College</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var player in Model.Players)
+                {
+                    <tr>
+                        <td>@player.First_Name @player.Last_Name</td>
+                        <td>@player.Team?.Name</td>
+                        <td>@player.Position</td>
+                        <td>@player.Height</td>
+                        <td>@player.Weight</td>
+                        <td>@player.Jersey_Number</td>
+                        <td>@player.College</td>
+                        <td>
+                            <a class="btn-link" asp-controller="Player" asp-action="Details"
+                                asp-route-playerId="@player.Id">View Stats</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+
+</div>

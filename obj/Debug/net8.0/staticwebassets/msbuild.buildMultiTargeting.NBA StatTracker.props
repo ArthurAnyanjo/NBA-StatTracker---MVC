@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\NBA StatTracker.props" />
+</Project>

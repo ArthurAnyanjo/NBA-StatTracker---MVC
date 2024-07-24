@@ -1,0 +1,47 @@
+@model NBA_StatTracker.ViewModels.HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "View Players";
+}
+
+<div class="text-center mt-4">
+
+    <h3>Players</h3>
+
+    <p>If you can't find a player, please use the search function!</p>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Full Name </th>
+                <th>Team</th>
+                <th>Position</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Jersey Number</th>
+                <th>College</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var player in Model.Players)
+            {
+                <tr>
+
+                    <td>@player.First_Name @player.Last_Name</td>
+                    <td>@player.Team.Name</td>
+                    <td>@player.Position</td>
+                    <td>@player.Height</td>
+                    <td>@player.Weight</td>
+                    <td>@player.Jersey_Number</td>
+                    <td>@player.College</td>
+                    <td>
+                        <a class="btn-link" asp-controller="Player" asp-action="Details"
+                            asp-route-playerId="@player.Id">View Stats</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
